@@ -676,6 +676,14 @@
                 <version>${maven-wrapper-plugin.version}</version>
             </plugin>
         </plugins>
+
+        <extensions>
+          <extension>
+            <groupId>com.github.seahen</groupId>
+            <artifactId>maven-s3-wagon</artifactId>
+            <version>1.3.3</version>
+          </extension>
+      </extensions>
     </build>
 
     <profiles>
@@ -1428,4 +1436,15 @@
             </build>
         </profile>
     </profiles>
+
+  <distributionManagement>
+    <snapshotRepository>
+      <id>incognia.maven.s3</id>
+      <url>s3://inloco-global-maven/snapshots</url>
+    </snapshotRepository>
+    <repository>
+      <id>incognia.maven.s3</id>
+      <url>s3://inloco-global-maven/releases</url>
+    </repository>
+  </distributionManagement>
 </project>
